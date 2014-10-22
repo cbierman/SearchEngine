@@ -34,11 +34,14 @@ public class Database {
 		db.add(e);
 	}
 	// Return the address string at position index
-	protected static String get(int index) {
+	protected static String getAddrByIndex(int index) {
 		return db.get(index).getAddr();
 	}
+	protected static Field getFieldByIndex(int index) {
+		return db.get(index).getField();
+	}
 	// Removes an entry from the database
-	protected void removeByField(Field fd) {
+	protected static void removeByField(Field fd) {
 		// Can be implemented later
 	}
 	// Returns the number of Entries in the database
