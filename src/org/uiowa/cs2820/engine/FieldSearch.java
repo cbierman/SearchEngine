@@ -25,9 +25,10 @@ public class FieldSearch {
 		int size = Database.getSize();
 		
 		while (index < size) {
-			if ( Database.getFieldByIndex(index) == fd) {
+			if ( Database.getFieldByIndex(index).equals(fd) ) {
 				results.add(Database.getAddrByIndex(index));
 			}
+			index++;
 		}
 		return results;
 	}
