@@ -28,7 +28,7 @@ public class UserIndex {
 		String fieldname = WordsInLine[0];
 		for (int i =1; i<WordsInLine.length; i++) {
 			Field f = new Field(fieldname, WordsInLine[i]);
-			I.addField(f);
+			I.add(f, ident);
 		}
 		
 	}
