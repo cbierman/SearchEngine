@@ -27,7 +27,7 @@ public class Database {
 			return addr;
 		}		
 	}
-	private static List<Entry> db;
+	private static ArrayList<Entry> db = new ArrayList<Entry>();
 	// Adds an entry to the database
 	protected static void add(Field fd, String addr) {
 		Database.Entry e = new Entry(fd,addr);

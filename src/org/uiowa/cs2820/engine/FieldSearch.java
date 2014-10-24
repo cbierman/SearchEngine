@@ -15,12 +15,12 @@ import org.uiowa.cs2820.engine.Database;
 
 public class FieldSearch {
 	// Array of strings to hold results
-	private ArrayList<String> results;
+	private static ArrayList<String> results = new ArrayList<String>();
 	
 	// getEquals searches a database for a field and 
 	// returns a list of fields for which there is an
 	// exact match.
-	public ArrayList<String> findEquals(Field fd) {
+	public static ArrayList<String> findEquals(Field fd) {
 		int index = 0;
 		int size = Database.getSize();
 		
