@@ -18,6 +18,9 @@ public class Indexer {
 		if (!isClosed) {
 			Database.add(newField, identifier);
 		}
+		else {
+			throw new IOException("Indexer Closed")
+		}
 	}
 	//public void remove(Field newField) {
 	//	if (!isClosed) {
