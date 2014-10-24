@@ -14,7 +14,7 @@ public class Indexer {
 		this.isClosed = false;
 	}
 	
-	public void add(Field newField) {		//add a field and store in database
+	public void addField(Field newField) {		//add a field and store in database
 		if (!isClosed) {
 			Database.add(newField, identifier);
 		}
@@ -24,9 +24,6 @@ public class Indexer {
 	//		Database.remove(newField);
 	//	}
 	//}
-	protected void addField(Field fd) {
-		// Insert code here
-	}
 	public void close() {  //close the indexer
 		isClosed = true;
 	}
