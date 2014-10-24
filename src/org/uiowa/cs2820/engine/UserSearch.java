@@ -25,7 +25,8 @@ public class UserSearch {
 			System.out.println("Lookup Field name: " + f.getFieldName());
 			System.out.println("Lookup Field Value: " + f.getFieldValue());
 			System.out.println("FieldSearch results: ");
-			ArrayList<String> result = FieldSearch.findEquals(f);
+			FieldSearch searcher = new FieldSearch();
+			ArrayList<String> result = searcher.findEquals(f);
 			for (String e: result) {
 				System.out.println("\t\t" + e);
 			}

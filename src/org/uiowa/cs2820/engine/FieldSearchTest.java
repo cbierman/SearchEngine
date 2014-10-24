@@ -42,23 +42,26 @@ public class FieldSearchTest {
 	// This test should get zero results
 	@Test
 	public void FindEqualsShouldReturnNothing() {
+		FieldSearch fs = new FieldSearch();
 		Field fdUnique = new Field("unique","nothing else looks like this field");
-		results = FieldSearch.findEquals(fdUnique);
+		results = fs.findEquals(fdUnique);
 		assertTrue(results.isEmpty());
 	}
 	// This test should get one result
 	@Test
 	public void FindEqualsShouldReturnOneMatch() {
+		FieldSearch fs = new FieldSearch();
 		Field fdWillMatch = new Field("shape","sqaure");
-		results = FieldSearch.findEquals(fdWillMatch);
+		results = fs.findEquals(fdWillMatch);
 		expectedResults.add("id1");
 		assertEquals(expectedResults,results);
 	}
 	// This test should get two results
 	@Test
 	public void FindEqualsShouldReturnTwoMatches() {
+		FieldSearch fs = new FieldSearch();
 		Field fdWillMatch = new Field("dupes","I am a duplicate");
-		results = FieldSearch.findEquals(fdWillMatch);
+		results = fs.findEquals(fdWillMatch);
 		expectedResults.add("id3");
 		expectedResults.add("id4");
 		assertEquals(expectedResults,results);
