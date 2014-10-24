@@ -1,6 +1,8 @@
 package org.uiowa.cs2820.engine;
 
 
+import java.io.IOException;
+
 import org.uiowa.cs2820.engine.Field;
 import org.uiowa.cs2820.engine.Database;
 
@@ -14,12 +16,13 @@ public class Indexer {
 		this.isClosed = false;
 	}
 	
-	public void add(Field newField, String identifier) {		//add a field and store in database
+	public void add(Field newField, String identifier) throws IOException {		//add a field and store in database
 		if (!isClosed) {
 			Database.add(newField, identifier);
 		}
 		else {
-			throw new IOException("Indexer Closed")
+			 throw new IOException("Indexer Closed");
+			
 		}
 	}
 	//public void remove(Field newField) {
