@@ -1,6 +1,5 @@
 package org.uiowa.cs2820.engine;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
@@ -8,29 +7,28 @@ import org.uiowa.cs2820.engine.Field;
 import org.uiowa.cs2820.engine.Database;
 
 public class Indexer {
-	//prepare to read a file
-	String fileName;
-	FileReader A;
-	BufferedReader B;
 	
-	Indexer(String fileName) {
-		this.fileName = fileName;
-		this.A = new FileReader(fileName);
-		this.B = new BufferedReader(A);
-		
+	private String identifier;			//initialize the identifier and the database
+	private Database myDatabase;
+	private Boolean isClosed;
+	
+	Indexer(String indentifier, Database myDatabase) {
+		this.identifier = identifier;
+		this.myDatabase = myDatabase;
+		this.isClosed = false;
 	}
-	public void setId() { //where the identifier is created and file is read
-		String line = null, identifier;
-		int count = 0;
-		line = B.readLine();
-		while (true) { 
-			identifier = fileName + "_" + count;
-			if (line == null) //create new ids with growing counts		 
-				break;        //added to end to show its uniqueness
-			lineId(identifier, line);
-			line = B.readLine();
-			count += 1;
-		}
+	
+	public void add(Field newField){
+		if (!isClosed){
+			myDatabase.add(newField, identifier);}
+	}
+	
+	public void close(){
+		isClosed = true;
+	}
+	
+	public String getId() { 					//where the identifier can be retrieved
+		return this.identifier
 	}
 	
 	public void lineId(String identifier, String line) {
