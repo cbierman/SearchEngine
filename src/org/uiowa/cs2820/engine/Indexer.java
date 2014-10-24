@@ -17,7 +17,7 @@ public class Indexer {
 	}
 	
 	public void add(Field newField){		//add a field and store in database
-		if (isClosed == false){
+		if (!isClosed){
 			myDatabase.add(newField, identifier);}
 	}
 	//public void remove(Field newField){
